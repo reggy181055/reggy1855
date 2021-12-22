@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>PROGRAM SEDERHANA MENGHITUNG VOLUME BALOK</title>
+{% endblock meta %}
+
+{% block content %}
+<h2>Yuk menghitung</h2>
+<form method="post" name="enkripsi">
+    {% csrf_token %}
+    <textarea class="form-control" name="pjg" rows="7" placeholder="Panjang">{{panjang}}</textarea>
+    <textarea class="form-control" name="lbr" rows="7" placeholder="Lebar">{{lebar}}</textarea>
+    <textarea class="form-control" name="tgi" rows="7" placeholder="Lebar">{{tinggi}}</textarea>
+    <button type="submit" class="btn btn-primary">Hasil</button>
+</form>
+<br>
+<br>
+<h2>Volume :</h2><br>
+{{hasilvol}}
+{% endblock content %}
